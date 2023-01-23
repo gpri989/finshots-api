@@ -4,6 +4,10 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return 'Working Fine AF. Try with "/scrape?limit=10" Endpoint'
+
 @app.route('/scrape')
 def scrape():
     url = 'https://finshots.in/archive/'
