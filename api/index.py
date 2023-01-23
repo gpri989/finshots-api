@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import cross_origin
 import requests
 from bs4 import BeautifulSoup
 
@@ -9,6 +10,7 @@ def home():
     return 'Working Fine AF. Try with "/scrape?limit=10" Endpoint'
 
 @app.route('/scrape')
+@cross_origin()
 def scrape():
     url = 'https://finshots.in/archive/'
     articles = []
