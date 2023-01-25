@@ -26,7 +26,7 @@ def scrape():
             img_src = post_card.find("a", class_="post-card-image-link").find("img", class_="post-card-image")['src']
             link = 'https://finshots.in' + post_card.find("a", class_="post-card-image-link")['href']
             sname = "Finshots"
-            articles.append({'title': title, 'createdAt': date, 'content': excerpt, 'imageUrl': img_src, 'sourceUrl': link, 'sourceName': sname,'category': ["finance","finshots"]})
+            articles.append({'title': title, 'createdAt': date, 'content': excerpt, 'imageUrl': img_src, 'sourceUrl': link, 'sourceName': sname,'categoryNames': ["finance","finshots"]})
             count += 1
         if count < int(request.args.get('limit', 24)):
             # find the next button to navigate to the next page
